@@ -51,6 +51,7 @@ public class koneksiDB {
                         "                                                                           ");
             }catch(Exception e){
                 System.out.println("Notif : "+e);
+                System.out.println("jdbc:mysql://"+EnkripsiAES.decrypt(prop.getProperty("HOST"))+":"+EnkripsiAES.decrypt(prop.getProperty("PORT"))+"/"+EnkripsiAES.decrypt(prop.getProperty("DATABASE"))+"?zeroDateTimeBehavior=convertToNull&autoReconnect=true&useCompression=true");
                 try {
                     if(connection.isClosed()){
                         prop.loadFromXML(new FileInputStream("setting/database.xml"));
